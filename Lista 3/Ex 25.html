@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      body{
+         background-color: rgb(29, 63, 73);
+         color: beige;
+         text-align: center;
+      }
+      section{
+         background-color: aliceblue;
+         text-align: justify;
+         color: black;
+         border-radius: 10px;
+         padding: 15px;
+         width: 500px;
+         margin: auto;
+         box-shadow:5px 5px 10px rgba(0, 0, 0, 0.4);
+      }
+      button{
+         border-radius: 10%;
+         background-color:rgb(104, 157, 159);
+      }
+      H3{
+         text-align: center;
+      }
+    </style>
+    <script>
+        function Comparar(){
+         var v = document.getElementById('v').value;
+         var h = document.getElementById('h').value;
+         var c = "";
+         if ( v === h ){
+            alert("Os numeros digitados são iguais!");
+         }else{
+            alert("Os numero são diferentes!");
+         }
+
+        }
+   </script>
+    <title>EX25</title>
+</head>
+<body>
+    <p><strong>Exercicio 25</strong><p>
+      <section>
+                     <H3>Comparar numeros</H3>
+      <div class="principal"><label>Digite um numero: </label>
+      <input id="v"><br><br>
+      <label>Digite um novo numero: </label>
+      <input id="h"><br>
+
+       <button id="a" onclick="Comparar()" value="atualizar">Comparar</button><br>
+       
+      <br>
+    </section>
+    
+    
+</body>
+</html>

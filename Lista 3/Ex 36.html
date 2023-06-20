@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: rgb(0, 139, 139);
+            color: aliceblue;
+            text-align: center;
+        }
+        section {
+            background-color: aliceblue;
+            color: black;
+            text-align: justify;
+            color: black;
+            border-radius: 10px;
+            padding: 15px;
+            width: 500px;
+            margin: auto;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+        }
+        h3 {
+            text-align: center;
+        }
+        #paragrafo {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+    <script>
+      function atualizar(){
+        var cliente = document.getElementById('cli').value;
+        var consumo = document.getElementById('cons').value;
+        var msg = document.getElementById('resultado');
+        
+
+        switch(parseInt(cliente)){
+            case 1 : 
+            var valorKwh = 0.60;
+            break;
+            case 2:
+            var valorKwh = 0.48;
+            break;
+            case 3:
+            var valorKwh = 1.29;
+            break;
+            default:
+            msg.innerHTML = `Tipo de cliente inválido!`
+            break;
+        }
+        var valorConta = valorKwh * consumo;
+            msg.innerHTML= `O valor da sua conta é: ${valorConta}`
+      }
+    </script>
+    <title>EX36</title>
+</head>
+<body>
+  <!--não consegui compreender a questão, pois não ha parametros de consumo-->
+    <p id="paragrafo"><strong>Exercicio 36</strong></p>
+    <section>
+        <h3>EX36</h3>
+        
+        <div>
+            <label>Digite o seu consumo em KWH: </label>
+            <input id="cons" type="Number" name="consumo" value=""><br><br>
+            <label>Tipo de Cliente:</label>
+            <input id="cli" type="Number" name="cliente" value="">
+            <br>
+            <p> 1 - RESIDENCIA   2 - COMÉRCIO   3 - INDÚSTRIA</p>
+        </div>
+        <br>
+
+        <div id="resultado"></div><br>
+        <button id="up" onclick="atualizar()" value="atual">Atualizar</button><br>
+
+    </section>
+</body>
+</html>

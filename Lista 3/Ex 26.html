@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            background-color: rgb(32, 170, 170);
+            color: aliceblue;
+            text-align: center;
+        }
+        section{
+         background-color: aliceblue;
+         color: black;
+         text-align: justify;
+         color: black;
+         border-radius: 10px;
+         padding: 15px;
+         width: 500px;
+         margin: auto;
+         box-shadow:5px 5px 10px rgba(0, 0, 0, 0.4);
+      }
+    </style>
+    <Script>
+        function Atualizar(){
+            var v = document.getElementById('v').value;
+            var a = document.getElementById('resultado');
+
+            switch(v){
+                case '1': 
+                a.innerHTML="UM!";
+                break;
+                case '2':
+                a.innerHTML= "DOIS!";
+                break;
+                case '3':
+                a.innerHTML= "TRÊS!";
+                break;
+                case '4':
+                a.innerHTML= "QUATRO!";
+                break;
+                case '5':
+                a.innerHTML="CINCO!";
+                break;
+                default: 
+                a.innerHTML="NUMERO INVÁLIDO!";
+                break;
+            }
+        }
+    </Script>
+    <title>EX26</title>
+</head>
+<body>
+    <p><strong>Exercicio 26</strong><p>
+        <section>
+                    <H3>NUMEROS POR EXTENSO</H3>
+        <div class="principal"><label>Digite um numero: </label>
+        <input id="v"><br><br>
+
+         <button id="a" onclick="Atualizar()" value="atualizar">Comparar</button><br>
+         
+        <br>
+        <div id="resultado">mensagem </div>
+      </section>
+
+
+</body>
+</html>

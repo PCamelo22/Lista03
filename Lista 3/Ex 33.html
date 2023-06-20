@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: rgb(0, 139, 104);
+            color: aliceblue;
+            text-align: center;
+        }
+        section {
+            background-color: aliceblue;
+            color: black;
+            text-align: justify;
+            color: black;
+            border-radius: 10px;
+            padding: 15px;
+            width: 500px;
+            margin: auto;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+        }
+        h3 {
+            text-align: center;
+        }
+        #paragrafo {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+    <script>
+      function atualizar(){
+        var l1 = document.getElementById('n1').value;
+        var l2 = document.getElementById('n2').value;
+        var l3 = document.getElementById('n3').value;
+        var msg = document.getElementById('resultado');
+
+        if (l1 != l2 && l2 != l3){
+          msg.innerHTML = `O triangulo é Escaleno`;
+        } else if (l1 === l2){
+          msg.innerHTML = `O triangulo é Isóceles`
+        }else if(l1 === l2 && l2 === l3){
+          msg.innerHTML = `O triangulo é equilatero`
+        }
+
+      }
+       
+    </script>
+    <title>EX33</title>
+</head>
+<body>
+    <p id="paragrafo"><strong>Exercicio 33</strong></p>
+    <section>
+        <h3>EX33</h3>
+
+        <div>
+
+          <label>DIGITE 3 NUMEROS INTEIROS:</label><BR><br>
+            <input id="n1" type="Number" name="numero1" value=""><br><br>
+            <input id="n2" type="Number" name="numero2" value=""><br><br>
+            <input id="n3" type="Number" name="numero3" value=""><br><br>
+
+
+
+        </div>
+        <br>
+        <div id="resultado"></div><br>
+        <button id="up" onclick="atualizar()" value="atual">Atualizar</button><br>
+
+    </section>
+</body>
+</html>

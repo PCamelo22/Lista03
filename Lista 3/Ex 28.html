@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            background-color: rgb(0, 139, 109);
+            color: aliceblue;
+            text-align: center;
+        }
+        section{
+         background-color: aliceblue;
+         color: black;
+         text-align: justify;
+         color: black;
+         border-radius: 10px;
+         padding: 15px;
+         width: 500px;
+         margin: auto;
+         box-shadow:5px 5px 10px rgba(0, 0, 0, 0.4);
+      }
+    </style>
+    
+<script>
+function Calcular(){
+    var salarioMin = 1000;
+    var salario = parseFloat(document.getElementById('S').value);
+    var msg = document.getElementById('resultado');
+    var nome = document.getElementById("N").value;
+
+    var funcionarios = [];
+    var inputsNome = document.getElementsByName("nome");
+    var inputsSalario = document.getElementsByName("sal");
+
+    var tx1 = 0.5;
+    var tx2 = 0.2;
+    var tx3 = 0.15;
+    var tx4 = 0.1;
+
+    for (var i = 0; i < inputsNome.length; i++) {
+    var nome = inputsNome[i].value;
+    var salario = parseFloat(inputsSalario[i].value);
+    funcionarios.push({nome: nome, salario: salario});
+}
+
+    if(salario < 3* salarioMin){
+    salario += (salario * tx1)
+    } else if (salario >= 3 * salarioMin && salario < 10 * salarioMin){
+        salario += (salario * tx2)
+    } else if (salario >= 10 * salarioMin && salario <=20 * salarioMin){
+        salario += (salario * tx3)
+    } else {
+        salario += (salario * tx4)
+    }
+
+    msg.innerHTML = `Funcionario(a): ${nome} o salario minimo é de ${"$" + salarioMin} e seu salário atualizado é de ${salario.toFixed(2)} ja com reajuste`
+}
+
+</script>
+<title>EX28</title>
+</head>
+<body>
+    <p><strong>Exercicio 28</strong></p>
+    <section>
+        <h3>REAJUSTE</h3>
+
+        <div>
+            <label>REAJUSTE SALARIAL</label><br><br>
+            <label>DIGITE O NOME DO FUNCIONARIO:</label>
+            <input id="N" type="text" name="nome" value=""><br><br>
+            <label>DIGITE O SALÁRIO DESTE FUNCIONARIO:</label>
+            <input id="S" type="Number" name="sal" value=""><br>
+            
+        </div>
+        <br>
+        <div id="resultado"></div><br>
+            <button id="z" onclick="Calcular()" value="Calcular">Calcular</button><br>
+    </section>
+</body>
+</html>

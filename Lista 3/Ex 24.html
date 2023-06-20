@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script>
+        var arr = [];
+ 
+ function addItem(){
+    if (localStorage.meuArr){             
+       arr = JSON.parse(localStorage.getItem('meuArr')); 
+    }
+    /*valor digitado em v, armazenado na variavel novoItem*/
+    let novoItem = document.getElementById("v").value;
+    arr.push(novoItem);/*valor é armazenado na arr por meio do push*/
+    document.getElementById("v").value = "";/*zerando o campo input*/
+    localStorage.meuArr = JSON.stringify(arr);/*passando os dados armazenados para string no localstorage*/
+ }
+
+ function showItems(){
+    let resultDIV = document.getElementById('d');/*acessa a div com id = d*/
+    resultDIV.innerHTML = "";/*limpando a DIV*/
+    if (localStorage.meuArr){             
+       arr = JSON.parse(localStorage.getItem('meuArr')); 
+    }/*if - se o localst.. existe entao ele resgata o dado armazenado e passa para o formato de array*/
+    
+    for(var i in arr){/*para cada posição do array, o for vai rodar uma vez*/
+       let p = document.createElement("p");/*apos rodar uma vez ele cria um elemento de paragrafo*/
+       p.innerHTML = arr[i];/*atribui ao paragrafo a posição que esta sendo percorrida no array*/
+       resultDIV.append(p);/*para cada elemento ele apresentara o resultado em forma de paragrafo*/
+    }
+ }
+
+ function clearItem(){/*limpa o array sendo atribuido um novo arr[]*/
+    arr = [];
+    localStorage.meuArr = JSON.stringify(arr); /*pega os dados armazenados e zera com o novo arr=[]*/  
+ }
+        </script>
+    <title>EX24</title>
+</head>
+<body>
+    <p><strong>Exercicio 24</strong><p>
+        <section>
+    <div class="principal"><label>Digite um numero: </label>
+       <input id="v"><br>
+       <button id="a" onclick="addItem()">Adicionar</button><br>
+       <button id="b" onclick="showItems()">Mostrar</button><br>
+       <button id="c" onclick="clearItem()">Apagar</button><br></div>
+      <br>
+        <div id="d"></div>
+    </section>
+    
+    
+</body>
+</html>

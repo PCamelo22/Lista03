@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            background-color: rgb(0, 139, 127);
+            color: aliceblue;
+            text-align: center;
+        }
+        section{
+         background-color: aliceblue;
+         color: black;
+         text-align: justify;
+         color: black;
+         border-radius: 10px;
+         padding: 15px;
+         width: 500px;
+         margin: auto;
+         box-shadow:5px 5px 10px rgba(0, 0, 0, 0.4);
+      }
+      H3{
+        text-align: center;
+      }
+      #paragrafo{
+        font-family: Arial, Helvetica, sans-serif;
+      }
+    </style>
+        
+    <script>
+function mes(){
+    var mes = document.getElementById('m').value;
+    var mensagem = document.getElementById('resultado');
+
+    switch (mes) {
+                case "1":
+                    mensagem.innerHTML = "JANEIRO";
+                    break;
+                case "2":
+                    mensagem.innerHTML = "FEVEREIRO";
+                    break;
+                case "3":
+                    mensagem.innerHTML = "MARÇO";
+                    break;
+                case "4":
+                    mensagem.innerHTML = "ABRIL";
+                    break;
+                case "5":
+                    mensagem.innerHTML = "MAIO";
+                    break;
+                case "6":
+                    mensagem.innerHTML = "JUNHO";
+                    break;
+                case "7":
+                    mensagem.innerHTML = "JULHO";
+                    break;
+                case "8":
+                    mensagem.innerHTML = "AGOSTO";
+                    break;
+                case "9":
+                    mensagem.innerHTML = "SETEMBRO";
+                    break;
+                case "10":
+                    mensagem.innerHTML = "OUTUBRO";
+                    break;
+                case "11":
+                    mensagem.innerHTML = "NOVEMBRO";
+                    break;
+                case "12":
+                    mensagem.innerHTML = "DEZEMBRO";
+                    break;
+                default:
+                    mensagem.innerHTML = "Mês inválido";
+                    break;
+
+}}
+</script>
+<title>EX29</title>
+</head>
+<body>
+    <p id="paragrafo"><strong>Exercicio 29</strong></p>
+    <section>
+        <h3>MÊS</h3>
+
+        <div>
+            <label>DIGITE UM NUMERO PARA OBTER O MÊS CORRESPONDENTE</label><br><br>
+            <label>DIGITE:</label>
+            <input id="m" type="text" name="nome" value=""><br><br>
+            
+            
+        </div>
+        <br>
+        <div id="resultado"></div><br>
+            <button id="z" onclick="mes()" value="mes">Atualizar</button><br>
+    </section>
+</body>
+</html>

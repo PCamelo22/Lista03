@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: rgb(0, 139, 132);
+            color: aliceblue;
+            text-align: center;
+        }
+        section {
+            background-color: aliceblue;
+            color: black;
+            text-align: justify;
+            color: black;
+            border-radius: 10px;
+            padding: 15px;
+            width: 500px;
+            margin: auto;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+        }
+        h3 {
+            text-align: center;
+        }
+        #paragrafo {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+    <script>
+      function atualizar() {
+    var msg = document.getElementById('resultado');
+    var professor = document.getElementById('n1').value;
+    var salario = 0;
+    var horas = document.getElementById('n2').value;
+    var nivel1 = document.getElementById('n3').checked;
+    var nivel2 = document.getElementById('n4').checked;
+    var nivel3 = document.getElementById('n5').checked;
+
+  if (nivel1) {
+    salario = horas * 12;
+  } else if (nivel2) {
+    salario = horas * 17;
+  } else if (nivel3) {
+    salario = horas * 25;
+  }
+
+  msg.innerHTML = `O salário do professor ${professor} é de $ ${salario}`;
+}
+
+    </script>
+    <title>EX34</title>
+</head>
+<body>
+    <p id="paragrafo"><strong>Exercicio 34</strong></p>
+    <section>
+        <h3>EX34</h3>
+
+        <div>
+
+          <label>DIGITE 3 NUMEROS INTEIROS:</label><BR><br>
+            <label>NOME DO PROFESSOR: </label>
+            <input id="n1" type="text" name="numero1" value=""><br><br>
+            <label>HORAS/AULA:  </label>
+            <input id="n2" type="Number" name="numero2" value=""><br><br>
+            <input id="n3" type="checkbox" name="CHECKBOXN1" value="12">Nível 1<br><br>
+            <input id="n4" type="checkbox" name="CHECKBOXN2" value="17">Nível 2<br><br>
+            <input id="n5" type="checkbox" name="CHECKBOXN3" value="25">Nível 3<br><br>
+        </div>
+        <br>
+        <div id="resultado"></div><br>
+        <button id="up" onclick="atualizar()" value="atual">Atualizar</button><br>
+
+    </section>
+</body>
+</html>

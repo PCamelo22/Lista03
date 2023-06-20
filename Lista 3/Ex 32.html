@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: darkblue;
+            color: aliceblue;
+            text-align: center;
+        }
+        section {
+            background-color: aliceblue;
+            color: black;
+            text-align: justify;
+            color: black;
+            border-radius: 10px;
+            padding: 15px;
+            width: 500px;
+            margin: auto;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+        }
+        h3 {
+            text-align: center;
+        }
+        #paragrafo {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+
+    <script>
+        function ordemCrescente() {
+  // Obter os valores dos três números digitados pelo usuário
+  var num1 = parseFloat(document.getElementById('p').value);
+  var num2 = parseFloat(document.getElementById('s').value);
+  var num3 = parseFloat(document.getElementById('t').value);
+  var msg = document.getElementById('resultado');
+
+  // Verificar a ordem crescente dos números e armazenar na variável 'resultado'
+  var resultado = '';
+  if (num1 <= num2 && num1 <= num3) {
+    resultado += num1 + ' , ';
+    if (num2 <= num3) {
+      resultado += num2 + ' , ' + num3;
+    } else {
+      resultado += num3 + ' , ' + num2;
+    }
+  } else if (num2 <= num1 && num2 <= num3) {
+    resultado += num2 + ' , ';
+    if (num1 <= num3) {
+      resultado += num1 + ' , ' + num3;
+    } else {
+      resultado += num3 + ' , ' + num1;
+    }
+  } else {
+    resultado += num3 + ' , ';
+    if (num1 <= num2) {
+      resultado += num1 + ' , ' + num2;
+    } else {
+      resultado += num2 + ' , ' + num1;
+    }
+  }
+
+  // Exibir o resultado na página
+  msg.innerHTML = 'Numeros em ordem crescente: ' + resultado;
+}
+
+    </script>
+    <title>EX32</title>
+</head>
+<body>
+    <p id="paragrafo"><strong>Exercicio 32</strong></p>
+    <section>
+        <h3>EX32</h3>
+
+        <div>
+          
+            
+        </div>
+        <br>
+        <div id="resultado"></div><br>
+        <button id="ordemCrescente" onclick="ordemCrescente()" value="mes">Atualizar</button><br>
+
+    </section>
+</body>
+</html>

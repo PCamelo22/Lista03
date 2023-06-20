@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            background-color: rgb(4, 109, 141);
+            color: aliceblue;
+            text-align: center;
+        }
+        section{
+         background-color: aliceblue;
+         color: black;
+         text-align: justify;
+         color: black;
+         border-radius: 10px;
+         padding: 15px;
+         width: 500px;
+         margin: auto;
+         box-shadow:5px 5px 10px rgba(0, 0, 0, 0.4);
+      }
+    </style>
+    
+<script>
+
+function calcularDesconto() {
+    var veiculos = {
+        G: { nome: "ONIX", preco: 40000 },
+        F: { nome: "CRUZE", preco: 60000 },
+        C: { nome: "CAMINHONETE", preco: 150000 }
+    };
+
+    var combustiveis = {
+        A: { nome: "álcool", desconto: 0.25 },
+        S: { nome: "gasolina", desconto: 0.21 },
+        D: { nome: "diesel", desconto: 0.14 }
+    };
+
+    var veiculoSelecionado = null;
+    var combustivelSelecionado = null;
+
+    // Obter o veículo selecionado
+    var veiculoInputs = document.getElementsByName("carros");
+    for (var i = 0; i < veiculoInputs.length; i++) {
+        if (veiculoInputs[i].checked) {
+            veiculoSelecionado = veiculos[veiculoInputs[i].id];
+            break;
+        }
+    }
+
+    // Obter o combustível selecionado
+    var combustivelInputs = document.getElementsByName("COMBUSTIVEL");
+    for (var i = 0; i < combustivelInputs.length; i++) {
+        if (combustivelInputs[i].checked) {
+            combustivelSelecionado = combustiveis[combustivelInputs[i].id];
+            break;
+        }
+    }
+
+    // Verificar se veículo e combustível foram selecionados
+    if (!veiculoSelecionado || !combustivelSelecionado) {
+        console.log("Por favor, selecione o veículo e o tipo de combustível.");
+        return;
+    }
+
+    // Calcular desconto e total a pagar
+    var desconto = veiculoSelecionado.preco * combustivelSelecionado.desconto;
+    var totalAPagar = veiculoSelecionado.preco - desconto;
+
+    // Exibir resultados na interface
+    document.getElementById("resultado").innerHTML = "Veículo selecionado: " + veiculoSelecionado.nome + "<br>" +
+        "Tipo de combustível selecionado: " + combustivelSelecionado.nome + "<br>" +
+        "Total de desconto: " + desconto.toFixed(2) + "<br>" +
+        "Total a ser pago pelo cliente: " + totalAPagar.toFixed(2);
+}
+</script>
+<title>EX27</title>
+</head>
+<body>
+    <p><strong>Exercicio 27</strong></p>
+    <section>
+        <h3>CARANGO</h3>
+
+        <div class="principal">
+            <label>ESCOLHA SEU CARRO:</label><br><br>
+            <input id="G" type="radio" name="carros" value="40000">GOL - PREÇO $40.000,00<br>
+            <input id="F" type="radio" name="carros" value="60000">GOLF - PREÇO $60.000,00<br>
+            <input id="C" type="radio" name="carros" value="150000">CAMINHONETE - PREÇO $150.000,00<br>
+
+            <input id="A" type="radio" name="COMBUSTIVEL">ALCOOL<br>
+            <input id="S" type="radio" name="COMBUSTIVEL">GASOLINA<br>
+            <input id="D" type="radio" name="COMBUSTIVEL">DIESEL<br>
+
+            <button id="z" onclick="calcularDesconto()" value="Calcular">Calcular</button><br>
+        </div>
+        <br>
+        <div id="resultado"></div>
+    </section>
+</body>
+</html>

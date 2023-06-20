@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: rgb(0, 139, 104);
+            color: aliceblue;
+            text-align: center;
+        }
+        section {
+            background-color: aliceblue;
+            color: black;
+            text-align: justify;
+            color: black;
+            border-radius: 10px;
+            padding: 15px;
+            width: 500px;
+            margin: auto;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+        }
+        h3 {
+            text-align: center;
+        }
+        #paragrafo {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+    </style>
+    <script>
+      function calcularPesoIdeal() {
+        var nome = document.getElementById("nome").value;
+        var sexoM = document.getElementById("sexoM").checked;
+        var sexof = document.getElementById("sexof").checked;
+        var altura = parseFloat(document.getElementById("altura").value);
+        var idade = parseInt(document.getElementById("idade").value);
+
+        var sexo = "";
+        if (sexoM) {
+          sexo = "M";
+        } else if (sexof) {
+          sexo = "F";
+        } else {
+          console.log("Selecione o sexo.");
+          return; // Encerra a função caso o sexo não seja selecionado
+        }
+
+        var pesoIdeal = 0;
+
+        if (sexo === "M") { // Sexo masculino
+          pesoIdeal = (72.7 * altura) - 58;
+        } else if (sexo === "F") { // Sexo feminino
+          pesoIdeal = (62.1 * altura) - 44.7;
+        } else {
+          console.log("Sexo inválido. Digite M para masculino ou F para feminino.");
+          return; // Encerra a função caso o sexo seja inválido
+        }
+
+        console.log("Nome: " + nome);
+        console.log("Peso ideal: " + pesoIdeal.toFixed(2) + " kg");
+      }
+    </script>
+    <title>EX37</title>
+</head>
+<body>
+    <p id="paragrafo"><strong>Exercicio 37</strong></p>
+    <section>
+        <h3>EX37</h3>
+
+        <div>
+          <label>SEU NOME: </label>
+            <input id="nome" type="text" name="nomec" value=""><br><br>
+          <label>IDADE: </label> 
+            <input id="idade" type="Number" name="idadec" value=""><BR><br>
+          <label>ALTURA: </label>
+            <input id="altura" type="Number" name="alturac" value=""><BR><br>
+          <P>SEXO: </P>
+          <label>MASCULINO</label>
+            <input id="sexoM" type="radio" name="sexo" value="M"><br>
+          <label>FEMININO</label>
+            <input id="sexof" type="radio" name="sexo" value="F">
+        </div>
+        <br>
+        <div id="resultado"></div><br>
+        <button id="up" onclick="calcularPesoIdeal()" value="atual">Atualizar</button><br>
+
+    </section>
+</body>
+</html>

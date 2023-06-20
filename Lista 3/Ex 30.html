@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: rgb(0, 123, 139);
+            color: aliceblue;
+            text-align: center;
+        }
+        section {
+            background-color: aliceblue;
+            color: black;
+            text-align: justify;
+            color: black;
+            border-radius: 10px;
+            padding: 15px;
+            width: 500px;
+            margin: auto;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+        }
+        h3 {
+            text-align: center;
+        }
+        #paragrafo {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+
+    <script>
+        function marcarCheckbox(id) {
+            var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            
+            checkboxes.forEach(function(checkbox) {
+                if (checkbox.id !== id) {
+                    checkbox.checked = false;
+                }
+            });
+        }
+
+        function salario() {
+
+            var name = document.getElementById('n').value;
+            var idade = document.getElementById('i').value;
+            var salfixo = document.getElementById('salf').value;
+            var sexo = document.getElementById('meuCheckbox1').value;
+            var sexo2 = document.getElementById('meuCheckbox2').value;
+            var salliq = "";
+            var msg = document.getElementById('resultado');
+            if (document.getElementById('meuCheckbox1').checked && idade >= 30){
+                salliq = salfixo - 100;
+            }else if (document.getElementById('meuCheckbox1').checked && idade < 30){
+                salliq = salfixo - 50;
+            }else if (document.getElementById('meuCheckbox2').checked &&idade >=30){
+                salliq = salfixo - 200;
+            }else if (document.getElementById('meuCheckbox2').checked &&idade < 30){
+                salliq = salfixo - 80;
+        }
+            msg.innerHTML = `${name} e ${salliq}`;
+    
+    }
+    </script>
+    <title>EX30</title>
+</head>
+<body>
+    <p id="paragrafo"><strong>Exercicio 30</strong></p>
+    <section>
+        <h3>EX30</h3>
+
+        <div>
+            <label>DIGITE SEU NOME:</label>
+            <input id="n" type="text" name="nome" value=""><br><br>
+            <label>SUA IDADE:</label>
+            <input id="i" type="Number" name="idade" value=""><br><br>
+            <label>SALARIO FIXO:</label>
+            <input id="salf" type="Number" name="nome" value=""><br><br>
+            <label for="meuCheckbox1">MASCULINO</label>
+            <input type="checkbox" id="meuCheckbox1" onclick="marcarCheckbox('meuCheckbox1')">
+            <label for="meuCheckbox2">FEMININO</label>
+            <input type="checkbox" id="meuCheckbox2" onclick="marcarCheckbox('meuCheckbox2')">
+            
+        </div>
+        <br>
+        <div id="resultado"></div><br>
+        <button id="z" onclick="salario()" value="mes">Atualizar</button><br>
+    </section>
+</body>
+</html>
